@@ -1,1 +1,8 @@
-
+venv/
+data/
+models/
+__pycache__/
+*.pkl
+*.csv
+*.pyc
+.DS_Store
