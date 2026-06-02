@@ -37,10 +37,10 @@ if isinstance(shap_values, list):
 else:
     print("Array shape:", shap_values.shape)
 
-# Force regular SHAP values, not interaction values
+# Force regular SHAP values (not interaction values)
 shap_values = explainer.shap_values(X_test_sample, check_additivity=False)
 
-# For 3D array — take mean across interaction dimension
+# For 3D array — taking mean across interaction dimension
 if len(shap_values.shape) == 3:
     sv = shap_values[:, :, 1]  
 else:
@@ -48,7 +48,7 @@ else:
 
 shap.summary_plot(sv, X_test_sample, feature_names=feature_names)
 
-# Show explanation for one individual applicant
+# explanation for one individual applicant
 i = 0  # first applicant in sample
 
 shap.plots._waterfall.waterfall_legacy(
@@ -61,7 +61,7 @@ shap.plots._waterfall.waterfall_legacy(
 top_factors = [feature_names[np.argmax(np.abs(sv[i]))] 
                for i in range(len(X_test_sample))]
 
-# Get probabilities
+# Getting probabilities
 probs = model.predict_proba(X_test_sample)[:, 1]
 
 # Build explanation dataframe
