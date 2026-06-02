@@ -6,5 +6,4 @@ imbalanced-learn
 shap
 matplotlib
 joblib
-fastapi
-uvicorn
+os
