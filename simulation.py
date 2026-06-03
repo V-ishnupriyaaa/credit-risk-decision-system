@@ -71,3 +71,8 @@ plt.tight_layout()
 plt.savefig('reports/strategy_comparison.png')
 plt.show()
 print("Chart saved to reports/strategy_comparison.png")
+
+plt.savefig('reports/shap_waterfall.png', bbox_inches='tight')
+
+
+
