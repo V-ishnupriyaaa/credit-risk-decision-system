@@ -74,3 +74,11 @@ explanation_df = pd.DataFrame({
 print(explanation_df.head(10))
 explanation_df.to_csv('reports/explanations.csv', index=False)
 print("Explanations saved successfully!")
+
+# image
+plt.savefig('reports/shap_summary.png', bbox_inches='tight')
+
+
+
+
+
