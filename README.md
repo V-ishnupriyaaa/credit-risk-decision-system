@@ -39,6 +39,23 @@ may differ. Periodic retraining on recent data would be required.
 8. Run predictions: `python inference.py`
 9. Run simulation: `python simulation.py`
 
+## Visualizations
+
+### Financial Strategy Comparison
+![Financial Impact](reports/strategy_comparison.png)
+*Balanced threshold (0.35) achieves minimum total loss of $35.3M — 
+saving $2.16M vs conservative strategy*
+
+### SHAP Feature Importance (Global)
+![SHAP Summary](reports/shap_summary.png)
+*RevolvingUtilizationOfUnsecuredLines and total_delinquencies 
+are the strongest default predictors*
+
+### SHAP Waterfall — Individual Applicant Explanation
+![SHAP Waterfall](reports/shap_waterfall.png)
+*Example: This applicant has f(x)=0.003 — very low default risk. 
+utilization_debt_risk strongly reduces their risk score.*
+
 ## Key Results
 - **Winning Model:** Tuned Random Forest
 - **Optimal Threshold:** 0.38
